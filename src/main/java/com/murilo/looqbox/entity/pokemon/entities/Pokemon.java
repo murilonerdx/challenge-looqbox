@@ -1,27 +1,35 @@
-package com.murilo.looqbox.entity;
+package com.murilo.looqbox.entity.pokemon.entities;
 
-import com.murilo.looqbox.entity.pokemon.Result;
+import javax.persistence.*;
 
-import java.util.List;
-
-public class Spotlight extends Result {
+@Entity
+@Table(name="TB_POKEMON")
+public class Pokemon {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     private String name;
     private String highlight;
     private int start;
     private int end;
 
-    public Spotlight(String name) {
-        super(name);
-    }
-
-    public Spotlight(String name, String highlight, int start, int end) {
+    public Pokemon(Integer id, String name, String highlight, int start, int end) {
+        this.id = id;
         this.name = name;
         this.highlight = highlight;
         this.start = start;
         this.end = end;
     }
 
-    public Spotlight() {
+    public Pokemon() {
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -31,6 +39,7 @@ public class Spotlight extends Result {
     public void setName(String name) {
         this.name = name;
     }
+
 
     public String getHighlight() {
         return highlight;
@@ -55,5 +64,4 @@ public class Spotlight extends Result {
     public void setEnd(int end) {
         this.end = end;
     }
-
 }

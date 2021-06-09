@@ -1,6 +1,6 @@
-package com.murilo.looqbox.util;
+package com.murilo.looqbox.entity.pokemon.consumer.util;
 
-import com.murilo.looqbox.entity.pokemon.PokemonForm;
+import com.murilo.looqbox.entity.pokemon.consumer.PokemonForm;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -36,4 +36,5 @@ public class WebConsumer {
             return null;
         }
     }
+
 }

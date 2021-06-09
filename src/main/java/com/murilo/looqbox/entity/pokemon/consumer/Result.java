@@ -1,4 +1,4 @@
-package com.murilo.looqbox.entity.pokemon;
+package com.murilo.looqbox.entity.pokemon.consumer;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
