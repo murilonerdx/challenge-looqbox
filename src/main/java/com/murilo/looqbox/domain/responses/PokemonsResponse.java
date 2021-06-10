@@ -1,7 +1,7 @@
-package com.murilo.looqbox.entity.pokemon.consumer.responses;
+package com.murilo.looqbox.domain.responses;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.murilo.looqbox.entity.pokemon.consumer.model.Spotlight;
+import com.murilo.looqbox.domain.model.Spotlight;
 
 import java.io.Serializable;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.murilo.looqbox.entity.interfaces;
+package com.murilo.looqbox.domain.interfaces;
 
 import java.util.List;
 

@@ -1,18 +1,21 @@
-package com.murilo.looqbox.entity.pokemon.consumer.responses;
+package com.murilo.looqbox.domain.responses;
 
-import com.murilo.looqbox.entity.pokemon.consumer.model.Spotlight;
+import com.murilo.looqbox.domain.model.Spotlight;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
-public class PokemonsResponseUnique {
+public class PokemonResponseSingle {
     private List<Spotlight> listResultResponse = new ArrayList<>();
-    public PokemonsResponseUnique(Map<String, List<Spotlight>> search) {
+    public PokemonResponseSingle(Map<String, List<Spotlight>> search) {
         search.values().forEach(listResultResponse::addAll);
     }
 
     public List<Spotlight> getListResultResponse() {
+        //Percorrendo e adicionado o pre no highlight
+        listResultResponse.forEach(x->x.setHighlight("<pre>"+x.getHighlight()+"<pre>"));
         return listResultResponse;
     }
 

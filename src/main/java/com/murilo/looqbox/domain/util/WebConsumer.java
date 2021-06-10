@@ -1,6 +1,6 @@
-package com.murilo.looqbox.entity.pokemon.consumer.util;
+package com.murilo.looqbox.domain.util;
 
-import com.murilo.looqbox.entity.pokemon.consumer.model.PokemonForm;
+import com.murilo.looqbox.domain.model.PokemonForm;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -24,7 +24,7 @@ public class WebConsumer {
         HttpEntity<String> entity = new HttpEntity<String>(headers);
         try {
             List<PokemonForm> searchAllPokemonForm;
-            //Responsavel por ler o Json requisição e tratar ela
+            //Responsavel por ler o Json e tratar ela para a clase pokemonForm
             ResponseEntity<PokemonForm> pokemonResponse = template.exchange("https://pokeapi.co/api/v2/pokemon/?limit=" + limit
                     , HttpMethod.GET
                     , entity
