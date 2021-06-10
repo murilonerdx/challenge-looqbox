@@ -1,4 +1,4 @@
-package com.murilo.looqbox.entity.pokemon.consumer;
+package com.murilo.looqbox.entity.pokemon.consumer.model;
 
 import java.util.List;
 

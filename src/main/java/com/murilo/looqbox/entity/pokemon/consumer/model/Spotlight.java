@@ -1,14 +1,12 @@
-package com.murilo.looqbox.entity.pokemon.consumer;
+package com.murilo.looqbox.entity.pokemon.consumer.model;
 
-public class Spotlight extends Result {
+import java.io.Serializable;
+
+public class Spotlight implements Serializable {
     private String name;
     private String highlight;
     private int start;
     private int end;
-
-    public Spotlight(String name) {
-        super(name);
-    }
 
     public Spotlight(String name, String highlight, int start, int end) {
         this.name = name;
@@ -52,4 +50,10 @@ public class Spotlight extends Result {
         this.end = end;
     }
 
+    @Override
+    public String toString() {
+        return "Spotlight{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }

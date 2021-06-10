@@ -1,17 +1,18 @@
-package com.murilo.looqbox.entity.pokemon.consumer;
+package com.murilo.looqbox.entity.pokemon.consumer.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.io.Serializable;
-import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Result  implements Serializable {
 
     private String name;
+    private Spotlight spotlight;
 
-    public Result(String name) {
+    public Result(String name, Spotlight spotlight) {
         this.name = name;
+        this.spotlight = spotlight;
     }
 
     public String getName() {
@@ -23,5 +24,13 @@ public class Result  implements Serializable {
     }
 
     public Result() {
+    }
+
+    public Spotlight getSpotlight() {
+        return spotlight;
+    }
+
+    public void setSpotlight(Spotlight spotlight) {
+        this.spotlight = spotlight;
     }
 }

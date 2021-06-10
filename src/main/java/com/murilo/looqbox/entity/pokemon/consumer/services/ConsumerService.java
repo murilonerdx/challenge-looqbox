@@ -1,6 +1,6 @@
 package com.murilo.looqbox.entity.pokemon.consumer.services;
 
-import com.murilo.looqbox.entity.pokemon.consumer.PokemonForm;
+import com.murilo.looqbox.entity.pokemon.consumer.model.PokemonForm;
 import com.murilo.looqbox.entity.pokemon.consumer.util.WebConsumer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

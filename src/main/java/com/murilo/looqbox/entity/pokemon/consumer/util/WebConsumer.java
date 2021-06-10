@@ -1,6 +1,6 @@
 package com.murilo.looqbox.entity.pokemon.consumer.util;
 
-import com.murilo.looqbox.entity.pokemon.consumer.PokemonForm;
+import com.murilo.looqbox.entity.pokemon.consumer.model.PokemonForm;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
