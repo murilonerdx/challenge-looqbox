@@ -2,6 +2,7 @@ package com.murilo.looqbox.entity.pokemon.consumer.model;
 
 import java.util.List;
 
+//Modelo para pegar informações da API
 public class PokemonForm {
 
     private Integer count;
