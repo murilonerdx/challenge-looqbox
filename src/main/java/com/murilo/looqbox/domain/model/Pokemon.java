@@ -5,12 +5,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Result  implements Serializable {
+public class Pokemon implements Serializable {
 
     private String name;
-    private Spotlight spotlight;
+    private PokemonSpotlight spotlight;
 
-    public Result(String name, Spotlight spotlight) {
+    public Pokemon(String name, PokemonSpotlight spotlight) {
         this.name = name;
         this.spotlight = spotlight;
     }
@@ -23,14 +23,14 @@ public class Result  implements Serializable {
         this.name = name;
     }
 
-    public Result() {
+    public Pokemon() {
     }
 
-    public Spotlight getSpotlight() {
+    public PokemonSpotlight getSpotlight() {
         return spotlight;
     }
 
-    public void setSpotlight(Spotlight spotlight) {
+    public void setSpotlight(PokemonSpotlight spotlight) {
         this.spotlight = spotlight;
     }
 }

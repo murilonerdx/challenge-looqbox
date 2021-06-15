@@ -3,26 +3,26 @@ package com.murilo.looqbox.domain.model;
 import java.util.List;
 
 //Modelo para pegar informações da API
-public class PokemonForm {
+public class PokemonRequest {
 
     private Integer count;
     private String next;
 
-    private List<Result> results;
+    private List<Pokemon> pokemons;
 
-    public PokemonForm(List<Result> results) {
-        this.results = results;
+    public PokemonRequest(List<Pokemon> pokemons) {
+        this.pokemons = pokemons;
     }
 
-    public PokemonForm() {
+    public PokemonRequest() {
     }
 
-    public List<Result> getResults() {
-        return results;
+    public List<Pokemon> getResults() {
+        return pokemons;
     }
 
-    public void setResults(List<Result> results) {
-        this.results = results;
+    public void setResults(List<Pokemon> pokemons) {
+        this.pokemons = pokemons;
     }
 
     public Integer getCount() {
