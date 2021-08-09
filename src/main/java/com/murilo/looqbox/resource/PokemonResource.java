@@ -3,7 +3,7 @@ package com.murilo.looqbox.resource;
 import com.murilo.looqbox.domain.responses.SpotlightResponseResultSingle;
 import com.murilo.looqbox.domain.responses.SpotlightResponseResultList;
 import com.murilo.looqbox.domain.model.Spotlight;
-import com.murilo.looqbox.domain.request.PokemonRequest;
+import com.murilo.looqbox.domain.request.SpotilightRequest;
 import com.murilo.looqbox.domain.model.Pokemon;
 import com.murilo.looqbox.domain.service.impl.WebConsumerServiceImpl;
 import com.murilo.looqbox.domain.util.Algorithm;
@@ -30,10 +30,10 @@ public class PokemonResource {
 
     //TODO: Listar todos pokemons que existem em um range de 811
     //Listando todos pokemons
-    @RequestMapping(path="/listAllPokemons",method = RequestMethod.GET)
-    public ResponseEntity<List<PokemonRequest>> findAll() {
-        List<PokemonRequest> list = consumer.findAllPokemonReturnPageRequest();
-        return ResponseEntity.ok().body(list);
+    @RequestMapping(path="/AllPokemons",method = RequestMethod.GET)
+    public ResponseEntity<List<Pokemon>> findAll() {
+        List<Pokemon> listPokemon = consumer.findAllPokemonReturnPageRequest();
+        return ResponseEntity.ok().body(listPokemon);
     }
 
 
@@ -44,10 +44,10 @@ public class PokemonResource {
         //Aqui será guardado os nomes dos pokemons, essa estrutura foi feita como principal foco separar de modo que não limite apenas em uma variavel todo a lista, distribuindo para usar com outros focos
         //Os items que estão aqui dentro foram colocados aqui de modo particular, pois cada vez que rodar eu quero sobrescrever os valores que já existem.
         //Service para listar todos os pokemons que existem, e listando eles atributos com nomes iguais, para que ele possa referenciar e adicionar em cima deles.
-        List<PokemonRequest> pokemonRequestList = consumer.findAllPokemonReturnPageRequest();
+        List<SpotilightRequest> spotilightRequestList = consumer.findAllSpotilightReturnPageRequest();
 
         //Todo algoritimo estara aqui dentro, para não ficar tudo no controller, eu passo a lista e o nome em particular
-        List<Pokemon> manyListPokemons = Algorithm.listPokemon(pokemonRequestList, name);
+        List<Pokemon> manyListPokemons = Algorithm.listPokemon(spotilightRequestList, name);
 
         //Vou transformar a lista de nomes aproximados em uma lista de string de pokemon
         List<String> pokemons = manyListPokemons.stream().map(Pokemon::getName).collect(Collectors.toList());

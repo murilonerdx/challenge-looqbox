@@ -1,7 +1,7 @@
 package com.murilo.looqbox.domain.util;
 
 import com.murilo.looqbox.domain.model.Pokemon;
-import com.murilo.looqbox.domain.request.PokemonRequest;
+import com.murilo.looqbox.domain.request.SpotilightRequest;
 import com.murilo.looqbox.domain.model.Spotlight;
 
 import java.util.*;
@@ -44,13 +44,13 @@ public class Algorithm {
     }
 
 
-    public static List<Pokemon> listPokemon(List<PokemonRequest> pokemonRequestList, String name){
+    public static List<Pokemon> listPokemon(List<SpotilightRequest> spotilightRequestList, String name) {
         Pokemon pokemon;
         List<Pokemon> manyListPokemons = new ArrayList<>();
         //Verificador foi criado para saber quando vai ter apenas um item na lista, a logica foi se só existe um item na lista quer dizer que ele pegou justamente aquele que seria o ultimo ou o unico, então ele sai do loop
         //Ao sar do loop eu já crio o destaque para aparecer na tela da forma que eu quero
         //Utilizando matriz para percorrer dois objetos distintos
-        for (PokemonRequest poke : pokemonRequestList) {
+        for (SpotilightRequest poke : spotilightRequestList) {
             for (Pokemon r : poke.getResults()) {
                 //A logica para pegar o item é, ele vai percorrer toda a lista de pokemons buscando pelo item que tem a quantidade de caracters igual ou maior do que o usuario digitou, e comparando
                 //se desde o primeiro até o ultimo contando apartir do caracter é igual ao que foi digitado
@@ -75,8 +75,6 @@ public class Algorithm {
     //Complexidade pior situação é O(n^2) e na melhor situação O(n)
     //Pior situação é quando precisar ordernar todas as posições e melhor situação é quando somente a primeira posição precisa ser ordenada Ex: b, a, c, d
     private static List<String> SortPokemons(Map<String, List<Spotlight>> pokemons) {
-
-
         String temp;
         boolean sorted = true;
         List<String> sortedList = new ArrayList<>(pokemons.keySet());
@@ -99,4 +97,5 @@ public class Algorithm {
         }
         return sortedList;
     }
+
 }

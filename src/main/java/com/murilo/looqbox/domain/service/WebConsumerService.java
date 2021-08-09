@@ -1,9 +1,11 @@
 package com.murilo.looqbox.domain.service;
 
-import com.murilo.looqbox.domain.request.PokemonRequest;
+import com.murilo.looqbox.domain.model.Pokemon;
+import com.murilo.looqbox.domain.request.SpotilightRequest;
 
 import java.util.List;
 
 public interface WebConsumerService {
-    List<PokemonRequest> findAllPokemonReturnPageRequest();
+    List<SpotilightRequest> findAllSpotilightReturnPageRequest();
+    List<Pokemon> findAllPokemonReturnPageRequest();
 }

@@ -6,14 +6,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 //Modelo para pegar informações da API
-public class PokemonRequest {
+public class SpotilightRequest {
     private List<Pokemon> pokemons = new ArrayList<>();
 
-    public PokemonRequest(List<Pokemon> pokemons) {
+    public SpotilightRequest(List<Pokemon> pokemons) {
         this.pokemons = pokemons;
     }
 
-    public PokemonRequest() {
+    public SpotilightRequest() {
     }
 
     public List<Pokemon> getResults() {
