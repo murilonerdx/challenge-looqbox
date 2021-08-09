@@ -16,7 +16,9 @@ import java.util.Objects;
 
 
 @Service
-public class HttpServicePokemon {
+public class HttpServicePokemon{
+    public static final String URL = "https://pokeapi.co/api/v2/pokemon/?limit=";
+
     public static List<PokemonRequest> searchAllPokemon(Integer limit) {
         RestTemplateBuilder builder = new RestTemplateBuilder();
         RestTemplate template = builder.build();
@@ -26,7 +28,7 @@ public class HttpServicePokemon {
         try {
             List<PokemonRequest> searchAllPokemonRequest;
             //Responsavel por ler o Json e tratar ela para a clase pokemonForm
-            ResponseEntity<PokemonRequest> pokemonRequest = template.exchange("https://pokeapi.co/api/v2/pokemon/?limit=" + limit
+            ResponseEntity<PokemonRequest> pokemonRequest = template.exchange(URL + limit
                     , HttpMethod.GET
                     , entity
                     , PokemonRequest.class);
