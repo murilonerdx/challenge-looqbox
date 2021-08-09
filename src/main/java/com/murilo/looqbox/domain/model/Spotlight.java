@@ -2,20 +2,20 @@ package com.murilo.looqbox.domain.model;
 
 import java.io.Serializable;
 
-public class PokemonSpotlight implements Serializable {
+public class Spotlight implements Serializable {
     private String name;
     private String highlight;
     private int start;
     private int end;
 
-    public PokemonSpotlight(String name, String highlight, int start, int end) {
+    public Spotlight(String name, String highlight, int start, int end) {
         this.name = name;
         this.highlight = highlight;
         this.start = start;
         this.end = end;
     }
 
-    public PokemonSpotlight() {
+    public Spotlight() {
     }
 
     public String getName() {

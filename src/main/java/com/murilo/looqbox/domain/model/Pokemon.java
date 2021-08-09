@@ -8,11 +8,9 @@ import java.io.Serializable;
 public class Pokemon implements Serializable {
 
     private String name;
-    private PokemonSpotlight spotlight;
 
-    public Pokemon(String name, PokemonSpotlight spotlight) {
+    public Pokemon(String name) {
         this.name = name;
-        this.spotlight = spotlight;
     }
 
     public String getName() {
@@ -26,11 +24,4 @@ public class Pokemon implements Serializable {
     public Pokemon() {
     }
 
-    public PokemonSpotlight getSpotlight() {
-        return spotlight;
-    }
-
-    public void setSpotlight(PokemonSpotlight spotlight) {
-        this.spotlight = spotlight;
-    }
 }
