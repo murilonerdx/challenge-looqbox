@@ -30,12 +30,10 @@ public class PokemonResource {
 
     //TODO: Listar todos pokemons que existem em um range de 811
     //Listando todos pokemons
-    @RequestMapping(path="/AllPokemons",method = RequestMethod.GET)
+    @RequestMapping(path={"/AllPokemons", "/"},method = RequestMethod.GET)
     public ResponseEntity<List<Pokemon>> findAll() {
-        List<Pokemon> listPokemon = consumer.findAllPokemonReturnPageRequest();
-        return ResponseEntity.ok().body(listPokemon);
+        return ResponseEntity.ok().body(consumer.findAllPokemonReturnPageRequest());
     }
-
 
     //TODO: ResponseEntity generico, para que possa voltar dois tipos de valores diferentes
     @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -44,14 +42,9 @@ public class PokemonResource {
         //Aqui será guardado os nomes dos pokemons, essa estrutura foi feita como principal foco separar de modo que não limite apenas em uma variavel todo a lista, distribuindo para usar com outros focos
         //Os items que estão aqui dentro foram colocados aqui de modo particular, pois cada vez que rodar eu quero sobrescrever os valores que já existem.
         //Service para listar todos os pokemons que existem, e listando eles atributos com nomes iguais, para que ele possa referenciar e adicionar em cima deles.
-        List<SpotilightRequest> spotilightRequestList = consumer.findAllSpotilightReturnPageRequest();
-
         //Todo algoritimo estara aqui dentro, para não ficar tudo no controller, eu passo a lista e o nome em particular
-        List<Pokemon> manyListPokemons = Algorithm.listPokemon(spotilightRequestList, name);
-
         //Vou transformar a lista de nomes aproximados em uma lista de string de pokemon
-        List<String> pokemons = manyListPokemons.stream().map(Pokemon::getName).collect(Collectors.toList());
-        Map<String, List<Spotlight>> response = Algorithm.Search(pokemons, name);
+        Map<String, List<Spotlight>> response = Algorithm.Search(Algorithm.listPokemon(consumer.findAllSpotilightReturnPageRequest(), name).stream().map(Pokemon::getName).collect(Collectors.toList()), name);
         if (response.size() == 1){
             //Fazer ele retornar o padrão proposto no arquivo
             return ResponseEntity.ok().body(new SpotlightResponseResultSingle(response).getListResultResponse());

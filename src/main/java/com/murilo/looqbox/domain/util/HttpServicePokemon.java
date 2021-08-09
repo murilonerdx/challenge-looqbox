@@ -39,9 +39,9 @@ public class HttpServicePokemon {
         }
     }
 
-    public static List<Pokemon> transformSpotilightRequestInPokemon(Integer a) {
+    public static List<Pokemon> transformSpotilightRequestInPokemon(Integer limit) {
         List<Pokemon> listPokemon = new ArrayList<>();
-        for(SpotilightRequest spot : Objects.requireNonNull(searchAllPokemon(a))){
+        for(SpotilightRequest spot : Objects.requireNonNull(searchAllPokemon(limit))){
             listPokemon.addAll(spot.getPokemons());
         }
         return listPokemon;
