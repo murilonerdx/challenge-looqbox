@@ -5,7 +5,9 @@ import com.murilo.looqbox.domain.request.SpotilightRequest;
 
 import java.util.List;
 
+@SuppressWarnings("ALL")
 public interface WebConsumerService {
-    List<SpotilightRequest> findAllSpotilightReturnPageRequest();
-    List<Pokemon> findAllPokemonReturnPageRequest();
+  List<SpotilightRequest> findAllSpotilightReturnPageRequest();
+
+  List<Pokemon> findAllPokemonReturnPageRequest();
 }

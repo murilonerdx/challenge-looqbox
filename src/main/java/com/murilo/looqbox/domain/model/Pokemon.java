@@ -8,35 +8,28 @@ import java.util.Objects;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Pokemon implements Serializable {
 
-    private String name;
+  private String name;
 
-    public Pokemon(String name) {
-        this.name = name;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public Pokemon() {}
 
-    public Pokemon() {
-    }
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Pokemon pokemon = (Pokemon) o;
+    return Objects.equals(name, pokemon.name);
+  }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Pokemon pokemon = (Pokemon) o;
-        return Objects.equals(name, pokemon.name);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(name);
-    }
-
-
+  @Override
+  public int hashCode() {
+    return Objects.hash(name);
+  }
 }

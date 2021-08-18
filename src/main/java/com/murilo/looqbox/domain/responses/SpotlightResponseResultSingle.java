@@ -7,18 +7,15 @@ import java.util.List;
 import java.util.Map;
 
 public class SpotlightResponseResultSingle {
-    private List<Spotlight> listResultResponse = new ArrayList<>();
-    public SpotlightResponseResultSingle(Map<String, List<Spotlight>> search) {
-        search.values().forEach(listResultResponse::addAll);
-    }
+  private final List<Spotlight> listResultResponse = new ArrayList<>();
 
-    public List<Spotlight> getListResultResponse() {
-        //Percorrendo e adicionado o pre no highlight
-        listResultResponse.forEach(x->x.setHighlight("<pre>"+x.getHighlight()+"<pre>"));
-        return listResultResponse;
-    }
+  public SpotlightResponseResultSingle(Map<String, List<Spotlight>> search) {
+    search.values().forEach(listResultResponse::addAll);
+  }
 
-    public void setListResultResponse(List<Spotlight> listResultResponse) {
-        this.listResultResponse = listResultResponse;
-    }
+  public List<Spotlight> getListResultResponse() {
+    // Percorrendo e adicionado o pre no highlight
+    listResultResponse.forEach(x -> x.setHighlight("<pre>" + x.getHighlight() + "<pre>"));
+    return listResultResponse;
+  }
 }

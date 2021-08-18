@@ -1,6 +1,5 @@
 package com.murilo.looqbox.domain.service.impl;
 
-
 import com.murilo.looqbox.domain.model.Pokemon;
 import com.murilo.looqbox.domain.request.SpotilightRequest;
 import com.murilo.looqbox.domain.service.WebConsumerService;
@@ -9,17 +8,18 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@SuppressWarnings("ALL")
 @Service
 public class WebConsumerServiceImpl implements WebConsumerService {
 
-    //Serviço para listar todos pokemons
-    @Override
-    public List<SpotilightRequest> findAllSpotilightReturnPageRequest() {
-        return HttpServicePokemon.searchAllPokemon(811);
-    }
+  // Serviço para listar todos pokemons
+  @Override
+  public List<SpotilightRequest> findAllSpotilightReturnPageRequest() {
+    return HttpServicePokemon.searchAllPokemon(811);
+  }
 
-    @Override
-    public List<Pokemon> findAllPokemonReturnPageRequest() {
-        return HttpServicePokemon.transformSpotilightRequestInPokemon(811);
-    }
+  @Override
+  public List<Pokemon> findAllPokemonReturnPageRequest() {
+    return HttpServicePokemon.transformSpotilightRequestInPokemon(811);
+  }
 }
