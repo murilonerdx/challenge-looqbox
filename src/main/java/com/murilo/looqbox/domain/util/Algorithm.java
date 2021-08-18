@@ -25,14 +25,14 @@ public class Algorithm {
         // Caso ele encontre então ele vai pro proximo passo
         List<Spotlight> spotlights = new ArrayList<>();
         // Aqui está a magica para setar os valores do inicio da palavra e o final da palavra
-        spotlights.add(new Spotlight(pokemon, text, match.end() - 1));
+        spotlights.add(new Spotlight(pokemon, text, match.start(),match.end() - 1));
         // Então ele vai percorrer todo o a palavra digitada procurando pelas letras que condiz com
         // as letras do nome do pokemon
         filtered.put(pokemon, spotlights);
         while (match.find()) {
           // Então adiciona o nome do pokemon e sua spotlight de acordo com pokemon digitado ou
           // encontrado...
-          filtered.get(pokemon).add(new Spotlight(pokemon, text, match.end() - 1));
+          filtered.get(pokemon).add(new Spotlight(pokemon, text, match.start(),match.end() - 1));
         }
       }
     }
